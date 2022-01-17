@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "41bfd895-436a-4adf-a3f1-1f2a965e74d5",
+		"name": "Confirm Use",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search CONFIRM USE",
+			"item": [
+				{
+					"name": "search/collaboration",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{test}}search/collaboration",
+							"host": [
+								"{{test}}search"
+							],
+							"path": [
+								"collaboration"
+							],
+							"query": [
+								{
+									"key": "platform",
+									"value": "TWITTER, FACEBOOK",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "Australia",
+									"disabled": true
+								},
+								{
+									"key": "city",
+									"value": "Melbourne (Australia), Sydney (Australia)",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "Beauty",
+									"disabled": true
+								},
+								{
+									"key": "language",
+									"value": "English",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "100",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "u",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search/influencer/tags (searches on both tag sand caption) USED BY FE?",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{test}}search/influencer/tags?start=0&size=1&caption=Shepherds&tag=Outdoors, nature",
+							"host": [
+								"{{test}}search"
+							],
+							"path": [
+								"influencer",
+								"tags"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "caption",
+									"value": "Shepherds"
+								},
+								{
+									"key": "tag",
+									"value": "Outdoors, nature"
+								},
+								{
+									"key": "collaborationId",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search/influencer/social",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"search\": {\n    \"filter\":{\n        \"followers\":100,\n        \"gender\": \"FEMALE\",\n        \"engagements\": null,\n        \"engagmentRate\": \n        {\n            \n        },\n        \"age\": \n        {\n            \"from\":\"10\",\n            \"to\": \"30\"\n        },\n        \"locations\": [ \n           /* {\n            \"id\":null,\n            \"name\":null,\n            \"code\":null,\n            \"weight\": null,\n            \"coordinates\":{\n                \"lat\": null,\n                \"lon\": null\n            },\n                \"country\" : {\n                \n                    \"_id\" : NumberLong(2108121), \n                    \"name\" : \"Malaysia\", \n                    \"code\" : \"MY\", \n                    \"coordinates\" : \n                    {\n                        \"lat\" : \"3.1412\", \n                        \"lon\" : \"101.68653\"\n                    }\n                    }\n            }\n        } \n        */\n        ],\n        \"language\": \"en\",\n        \"audienceAge\": [\n             {\n                \"code\" : \"13-17\", \n                \"weight\" : 0.038435\n            },\n            {\n                \"code\": \"18-24\",\n                \"weight\":  0.307283\n            }\n        ],\n        \"audienceGender\": {\n                \"code\": \"MALE\",\n                \"weight\": 0.732895\n            },\n        \"audienceEthnicity\": {\n                \"code\":\"white\",\n                \"weight\": 0.232487,\n            },\n        \"audienceGeo\":[\n          /*  {\n                \"id\":,\n                \"weight\":\n            },\n            {\n                \"id\":,\n                \"weight\":\n            }*/\n        ]\n    },\n    \"sort\": {\n        \"field\": {},\n        \"id\": {},\n        \"direction\":{}\n    },\n    \"Paging\": {\n        \"limit\": 50,\n        \"skip\": 0\n    }\n\n},\n\"hideResults\": {\n\n}\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{test}}search/influencer/social",
+							"host": [
+								"{{test}}search"
+							],
+							"path": [
+								"influencer",
+								"social"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SSO CONFIRM USE",
+			"item": [
+				{
+					"name": "CONFIRM USE sso/user/{username}/payeeDetails",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"payeeDetails\" : {\n        \"stripe\" : {\n            \"_id\" : \"acct_1IBq7bQ7aa5wLnmg\", \n            \"verification\" : {\n                \"status\" : \"pending\", \n                \"disabledReason\" : \"action_required.requested_capabilities\"\n            }, \n            \"bankAccounts\" : [\n                {\n                    \"currency\" : \"aud\", \n                    \"country\" : \"AU\", \n                    \"bankName\" : \"STRIPE TEST BANK\", \n                    \"last4\" : \"3456\", \n                    \"status\" : \"new\"\n                }\n            ]\n        }, \n        \"billingDetails\" : {\n            \"firstName\" : \"Ria\", \n            \"lastName\" : \"Vandervis\", \n            \"email\" : \"\", \n            \"companyName\" : \"Where We At\", \n            \"addressOne\" : \"110 Bourke St\", \n            \"suburb\" : \"Melbourne\", \n            \"state\" : \"Victoria\", \n            \"postcode\" : \"3000\", \n            \"country\" : \"Australia\", \n            \"location\" : {\n                \"continent\" : \"5af3107a40002d79883d2000\", \n                \"country\" : \"5af3107a40252d79883d2025\"\n            }, \n            \"registrations\" : [\n                {\n                    \"taxRegistration\" : \"ABN\", \n                    \"registration\" : \"92983933887\"\n                }\n            ]\n        }, \n        \"taxes\" : [\n            \"5c5b8073d58c01917bfee509\"\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{test}}user/seafolly/payeeDetails",
+							"host": [
+								"{{test}}user"
+							],
+							"path": [
+								"seafolly",
+								"payeeDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CONFIRM USE sso/{username}/payeeDetails",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"payeeDetails\" : {\n        \"stripe\" : {\n            \"_id\" : \"acct_1IBq7bQ7aa5wLnmg\", \n            \"verification\" : {\n                \"status\" : \"pending\", \n                \"disabledReason\" : \"action_required.requested_capabilities\"\n            }, \n            \"bankAccounts\" : [\n                {\n                    \"currency\" : \"aud\", \n                    \"country\" : \"AU\", \n                    \"bankName\" : \"STRIPE TEST BANK\", \n                    \"last4\" : \"3456\", \n                    \"status\" : \"new\"\n                }\n            ]\n        }, \n        \"billingDetails\" : {\n            \"firstName\" : \"Ria\", \n            \"lastName\" : \"Vandervis\", \n            \"email\" : \"\", \n            \"companyName\" : \"Where We At\", \n            \"addressOne\" : \"110 Bourke St\", \n            \"suburb\" : \"Melbourne\", \n            \"state\" : \"Victoria\", \n            \"postcode\" : \"3000\", \n            \"country\" : \"Australia\", \n            \"location\" : {\n                \"continent\" : \"5af3107a40002d79883d2000\", \n                \"country\" : \"5af3107a40252d79883d2025\"\n            }, \n            \"registrations\" : [\n                {\n                    \"taxRegistration\" : \"ABN\", \n                    \"registration\" : \"92983933887\"\n                }\n            ]\n        }, \n        \"taxes\" : [\n            \"5c5b8073d58c01917bfee509\"\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/hypetap/sso/seafolly/payeeDetails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hypetap",
+								"sso",
+								"seafolly",
+								"payeeDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CONFIRM USE sso/manage/{authId}/users/{username}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/hypetap/sso/manage/59dae3967299ab291e6047a9/users/manager2test1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hypetap",
+								"sso",
+								"manage",
+								"59dae3967299ab291e6047a9",
+								"users",
+								"manager2test1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
